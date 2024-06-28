@@ -5,6 +5,8 @@ use euclidius::routing::{page, root};
 
 #[tokio::main]
 async fn main() {
+    dotenvy::dotenv().expect("File not found");
+
     let listener = TcpListener::bind("localhost:3000").await.unwrap();
 
     let router = Router::new()
