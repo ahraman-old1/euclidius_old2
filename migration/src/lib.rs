@@ -8,7 +8,10 @@ pub struct Migrator;
 
 impl MigratorTrait for Migrator {
     fn migrations() -> Vec<Box<dyn MigrationTrait>> {
-        vec![]
+        vec![
+            // 0.1.0
+            Box::new(m20240702_000001_create_users_table::Migration),
+        ]
     }
 }
 
